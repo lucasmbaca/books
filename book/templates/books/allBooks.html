@@ -15,6 +15,7 @@
     </form>
 
     {% for book in books%}
+        <h3>Este libro tiene {{book.comments.count}} comentarios</h3>
     <ul>
         <li>Title: {{book.title}}</li>
         <li>Description: {{book.description}}</li>
