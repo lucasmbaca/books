@@ -19,6 +19,7 @@
         <li>Title: {{book.title}}</li>
         <li>Description: {{book.description}}</li>
         <li>Year: {{book.year}}</li>
+        <li>go to: <a href="{% url 'single_book' book.id %}">comments</a></li>
     </ul>
     {% endfor %}
 {% endblock %}

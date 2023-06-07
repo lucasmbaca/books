@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>book: {{book.title}}</h1>
+    <a href="{% url 'books' %}">go back</a>
+
+    <h2>All the comments:</h2>
+    
+    {% for comment in comments %}
+        <p>{{comment.user}} {{comment.upload_date|timesince}}</p>
+        <div>
+            <p>{{comment.comment}}</p>
+        </div>
+    {% empty %}
+        <h3>no hay comentarios</h3>
+    {% endfor %}
+    
+{% endblock %}

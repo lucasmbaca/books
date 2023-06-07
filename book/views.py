@@ -13,6 +13,14 @@ def all_books(request):
         "form":form
     })
 
+def single_book(request, book_id):
+    book = Book.objects.get(id=book_id)
+    comments = book.comments.all()
+    return render(request, 'books/bookComments.html', {
+        "book":book,
+        "comments": comments
+    })
+
 #process books add
 def add_book(request):
     if request.method == 'POST':
